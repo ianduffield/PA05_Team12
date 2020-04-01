@@ -9,6 +9,6 @@ public class AllStayAtHome extends Population{
   public void createPeople(){
     for(int i=0; i<this.people.length; i++){
       this.addPerson(new StayAtHome());
-    }
+    } //This is a comment I'm using to test committing
   }
 }
