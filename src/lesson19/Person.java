@@ -90,7 +90,7 @@ public class Person {
     this.checkForInfection();
 
 	}
-
+	// Testing commit
   void tryToMove(){
 		tryToMoveRandomly();
 	}
