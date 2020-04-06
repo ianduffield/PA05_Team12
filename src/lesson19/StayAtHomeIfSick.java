@@ -13,5 +13,5 @@ public class StayAtHomeIfSick extends Person{
       super.tryToMove();
     }
 	}
-
+//test comment
 }
