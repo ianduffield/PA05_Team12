@@ -15,6 +15,12 @@ public class Athlete extends Person {
     super.tryToMoveRandomly();
 	}
 
+  public void setPosition(int x, int y){
+    super.x=x;
+    super.y=y;
+  }
+
+
   void tryToMoveRandomly(){
     int dx = random.nextInt(4)-1; // -1,0,1
     int dy = random.nextInt(4)-1; // -1,0,1
@@ -24,7 +30,7 @@ public class Athlete extends Person {
   }
 
   void checkForInfection(){
-    if (this.exposed && ! this.infected) {
+    if (this.exposed && !this.infected) {
       this.chance = new random.nextInt(5);
       if (this.chance > 1) {
         this.infected = true;
