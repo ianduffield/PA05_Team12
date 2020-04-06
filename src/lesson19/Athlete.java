@@ -37,4 +37,14 @@ public class Athlete extends Person {
     }
   }
 
+  boolean isOK(int a, int b,Country country) {
+		if (a<0 || a>=country.places.length || b<0
+				|| b>= country.places[0].length) {
+			return false;
+		}else if (country.places[a][b] !=null) {
+			return false;
+		}else {
+			return true;
+		}
+
 }
