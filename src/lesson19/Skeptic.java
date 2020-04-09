@@ -28,5 +28,5 @@ public void tryToMoveRandomly() {
 	   if (isOK(this.x+dx, this.y+dy,this.country)) {
 	     this.moveTo(this.x+dx, this.y+dy);
 	   }
-	} //test comment
+	} //test comment...
 }
