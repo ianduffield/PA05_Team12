@@ -29,7 +29,7 @@ public class Country {
 	}
 
 	public void printState(int day){
-		System.out.printf("%3d ",day);
+		System.out.printf("%3i ",day);
 		for(int i =0; i<numInfected; i++){
 			System.out.print("I");
 		}
