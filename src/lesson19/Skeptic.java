@@ -22,7 +22,7 @@ public class Skeptic extends Person {
 		   try to move one step in a random direction.
 			 if they way is blocked then don't move.
 		*/
-public void tryToMoveRandomly() {
+	public void tryToMoveRandomly() {
 	   int dx = random.nextInt(3)-1; // -1,0,1
 	   int dy = random.nextInt(3)-1; // -1,0,1
 	   if (isOK(this.x+dx, this.y+dy,this.country)) {
