@@ -11,7 +11,13 @@ public class AnalyzeSimulation extends RunSimulation {
 	int repetitions;
 	
 	public AnalyzeSimulation(int width, int height, int numStayHome, int numEssential, int numSkeptic, int numFrequentFlier, int numAthlete, int repetitions){
-
+		this.width = width;
+		this.height = height;
+		this.numStayHome = numStayHome;
+		this.numEssential = numEssential;
+		this.numFrequentFlier = numFrequentFlier;
+		this.numAthlete = numAthlete;
+		this.repetitions = repetitions;
 }
 	public void AnalyzeSituation(){
 		int[] numOfDaysList = new int[this.repetitions];
@@ -40,7 +46,6 @@ public class AnalyzeSimulation extends RunSimulation {
 			country.population = population;
 			// next we place the people into the country randomly
 			population.placePeople(country);
-			System.out.println("\nTracking the Infection");
 			for(int k=0;k<MAX_TICKS; k++) {
 				country.simulateOneStep();
 				if (country.numInfected > peakInfectedLevel){
@@ -48,6 +53,7 @@ public class AnalyzeSimulation extends RunSimulation {
 				}
 				if (country.numInfected==0) {
 					numOfDaysList[i] = k;
+					country.printStats();
 					break;
 
 				}

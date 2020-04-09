@@ -23,7 +23,7 @@ public class RunSimulation {
 		AnalyzeSimulation Analysis = new AnalyzeSimulation(width, height, numStayHome, numEssential, numSkeptic, numFrequentFlier, numAthlete, repetitions);
 		Analysis.AnalyzeSituation();
 		
-		// next we create the population and the country
+	/**	// next we create the population and the country
 		Population population;
 
 		//population = new Population(numPeople);
@@ -55,9 +55,9 @@ public class RunSimulation {
 		}
 		System.out.println("\nFinal State of the Country");
 		country.printCountry();
-
+	**/
 	}
 	
 
 
-}
+} 
