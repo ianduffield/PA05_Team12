@@ -4,12 +4,14 @@ public class MixedPopulation extends Population{
   int numShelterInPlace;
   int numEssential;
   int numOthers;
+  int FrequentFlier;
 
-  public MixedPopulation(int numShelterInPlace, int numEssential, int numOthers){
-    super(numShelterInPlace + numEssential + numOthers);
+  public MixedPopulation(int numShelterInPlace, int numEssential, int numOthers, int FrequentFlier){
+    super(numShelterInPlace + numEssential + numOthers+FrequentFlier);
     this.numShelterInPlace = numShelterInPlace;
     this.numEssential = numEssential;
     this.numOthers = numOthers;
+    this.FrequentFlier = FrequentFlier;
 
   }
 
@@ -23,5 +25,8 @@ public class MixedPopulation extends Population{
     for(int i=0; i<this.numOthers; i++){
       this.addPerson(new Person());
     }
+    for(int i=0; i<this.FrequentFlier; i++){
+        this.addPerson(new Person());
+      }
   }
 }
