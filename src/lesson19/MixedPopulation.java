@@ -15,7 +15,7 @@ public class MixedPopulation extends Population{
 
   public void createPeople(){
     for(int i=0; i<this.numShelterInPlace; i++){
-      this.addPerson(new StayAtHome());
+      this.addPerson(new StayAtHome());   //***addperson?
     }
     for(int i=0; i<this.numEssential; i++){
       this.addPerson(new StayAtHomeIfSick());

@@ -27,9 +27,9 @@ public class RunSimulation {
 		//int numOther = numPeople/20;
 		//int numStayHome = numPeople - numEssential - numOther;
 		population = new MixedPopulation(numStayHome, numEssential, numSkeptic);
-		population.createPeople();
+		population.createPeople(); //??****
 
-		Country country = new Country(width,height);
+		Country country = new Country(width,height);  //backward?***
 		// and add a link to the population in the country
 		country.population = population;
 		// next we place the people into the country randomly
