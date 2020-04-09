@@ -1,28 +1,25 @@
 package lesson19;
 
 public class AnalyzeSimulation extends RunSimulation {
+	int width;
+	int height;
+	int numStayHome;
+	int numEssential;
+	int numSkeptic;
+	int numFrequentFlier;
+	int numAthlete;
+	int repetitions;
+	
+	public AnalyzeSimulation(int width, int height, int numStayHome, int numEssential, int numSkeptic, int numFrequentFlier, int numAthlete, int repetitions){
 
-	public AnalyzeSimulation() {
-		
-	}
+}
 	public void AnalyzeSituation(){
-			// first we get the simulation parameters
-			// from the command line
-
-			int width = Integer.parseInt(args[0]);
-			int height = Integer.parseInt(args[1]);
-			int numStayHome = Integer.parseInt(args[2]);
-			int numEssential = Integer.parseInt(args[3]);
-			int numSkeptic = Integer.parseInt(args[4]);
-			int numFrequentFlier = Integer.parseInt(args[5]);
-			int numAthlete = Integer.parseInt(args[6]);
-			int repetitions = Integer.parseInt(args[7]);
-			int[] numOfDaysList = new int[repetitions];
-			int numOfDays = 0;
-			int[] numOfInfectedList = new int[repetitions];
-			int numOfInfected = 0;
-			int[] peakInfectedLevelList = new int[repetitions];
-			int peakInfectedLevel = 0;
+		int[] numOfDaysList = new int[this.repetitions];
+		int numOfDays = 0;
+		int[] numOfInfectedList = new int[this.repetitions];
+		int numOfInfected = 0;
+		int[] peakInfectedLevelList = new int[this.repetitions];
+		int peakInfectedLevel = 0;
 			
 			for (int i = 0; i < repetitions; i++){
 				
@@ -44,16 +41,26 @@ public class AnalyzeSimulation extends RunSimulation {
 			// next we place the people into the country randomly
 			population.placePeople(country);
 			System.out.println("\nTracking the Infection");
-			for(int k=0;k<super.MAX_TICKS; k++) {
+			for(int k=0;k<MAX_TICKS; k++) {
 				country.simulateOneStep();
-
+				if (country.numInfected > peakInfectedLevel){
+					peakInfectedLevel = country.numInfected;
+				}
 				if (country.numInfected==0) {
 					numOfDaysList[i] = k;
 					break;
 
 				}
-			}
-		}
+			} numOfInfectedList[i] = country.numRecovered;
+			peakInfectedLevelList[i] = peakInfectedLevel;
+		} peakInfectedLevel = 0;
+			for (int j = 0; j < this.repetitions; j++){
+			numOfDays += numOfDaysList[j];
+			numOfInfected += numOfInfectedList[j];
+			peakInfectedLevel += peakInfectedLevelList[j];
+		} System.out.println("Average number of days before the infection ends: " + numOfDays/this.repetitions);
+		System.out.println("Average number of infected persons: " + numOfInfected/this.repetitions);
+		System.out.println("Average level of peak infection: " + peakInfectedLevel/this.repetitions);
 	}
 
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RunSimulation {
 	// the maximum number of days the simulation will run
-	private static int MAX_TICKS=1000;
+	protected static int MAX_TICKS=1000;
 
 	private Random random = new Random();
 
@@ -19,7 +19,10 @@ public class RunSimulation {
 		int numSkeptic = Integer.parseInt(args[4]);
 		int numFrequentFlier = Integer.parseInt(args[5]);
 		int numAthlete = Integer.parseInt(args[6]);
-
+		int repetitions = Integer.parseInt(args[7]);
+		AnalyzeSimulation Analysis = new AnalyzeSimulation(width, height, numStayHome, numEssential, numSkeptic, numFrequentFlier, numAthlete, repetitions);
+		Analysis.AnalyzeSituation();
+		
 		// next we create the population and the country
 		Population population;
 
